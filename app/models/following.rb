@@ -1,4 +1,4 @@
 class Following < ApplicationRecord
-  belongs_to :user, touch: true, counter_cache: true
-  belongs_to :followed_user, counter_cache: :followers_count, class_name: 'User'
+  belongs_to :user
+  belongs_to :followed_user, class_name: 'User'
 end
