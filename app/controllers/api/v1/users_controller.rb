@@ -29,6 +29,7 @@ class Api::V1::UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
   end
 
   private
