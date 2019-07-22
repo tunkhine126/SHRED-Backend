@@ -6,6 +6,10 @@ class User < ApplicationRecord
   has_many :follower_users, through: :followers, source: :user
   has_many :bikes
 
+  has_many :comments
+  has_many :likes
+  has_many :rides
+
   has_secure_password
 
   validates :username, uniqueness: { case_sensitive: false }

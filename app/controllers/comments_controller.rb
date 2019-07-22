@@ -1,10 +1,17 @@
 class CommentsController < ApplicationController
 
+  def index
+    @comment =Comment.all
+    render json: @comment
+  end
+  
+  def new
+    @comment = Comment.new
+  end
+
   def create
-    @user = User.find(params[:user_id])
-    @ride = Ride.find(params[:ride_id])
-    @comment = @user.ride.comments.create(comments_params)
-    redirect_to 
+    @comment = Comment.create(comments_params)
+    render json: @comment
   end
 
   def edit
@@ -14,6 +21,10 @@ class CommentsController < ApplicationController
   def destroy
     Comment.find(params[:id]).destroy
     flash[:success] = "Comment deleted"
+  end
+
+  def show
+    @comment = Comment.find(params[:id])
   end
   
   private
