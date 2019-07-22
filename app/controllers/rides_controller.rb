@@ -20,6 +20,7 @@ class RidesController < ApplicationController
 
   def show
     @ride = Ride.find(params[:id])
+    render json: RideSerializer.new(@ride)
   end
 
   def destroy

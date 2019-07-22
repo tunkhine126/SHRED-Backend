@@ -21,6 +21,7 @@ class LikesController < ApplicationController
 
   def show
     @like = Like.find(params[:id])
+    render json: LikeSerializer.new(@like)
   end
 
   def destroy

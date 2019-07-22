@@ -20,6 +20,7 @@ class BikesController < ApplicationController
 
   def show
     @bike = Bike.find(params[:id])
+    render json: BikesSerializer.new(@bike)
   end
 
   def destroy
