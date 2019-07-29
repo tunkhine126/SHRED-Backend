@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-tun = User.create(username: "Tun", password: "1234", email: "tunkhine126@gmail.com", location: "Atlanta, GA.", bike_id: 1)
-preston = User.create(username: "Preston", password: "1234", email: "preston@gmail.com", location: "Atlanta, GA.", bike_id: 2)
-will = User.create(username: "Will", password: "1234", email: "will@gmail.com", location: "Atlanta, GA.", bike_id: 3)
+tun = User.create(username: "Tun", password: "1234", email: "tunkhine126@gmail.com", location: "Atlanta, GA.", bike_id: 1, img_url:"https://pbs.twimg.com/profile_images/1075438393805418496/JJb73qOS_200x200.jpg")
+preston = User.create(username: "Preston", password: "1234", email: "preston@gmail.com", location: "Atlanta, GA.", bike_id: 2, img_url:"https://pbs.twimg.com/profile_images/1152326272510545923/rsfXPwiU_200x200.jpg")
+will = User.create(username: "Will", password: "1234", email: "will@gmail.com", location: "Atlanta, GA.", bike_id: 3, img_url:"https://pbs.twimg.com/profile_images/1151697682311864320/heot9El-_200x200.jpg")
 
 tunBike = Bike.create(category: "XC", name: "Rocky Mountain", frameset: "27.5", groupset: "Deore", wheelset: "Stock", suspension: "Stock", brakes: "Stock", user_id: 1, img_url: "https://forums.mtbr.com/attachments/27-5/753723d1358386071-rocky-mountain-2013-altitude-27-5-banshee-spitfire.jpg")
 presBike = Bike.create(category: "Downhill",name: "Canyon", frameset: "29r", groupset: "X1 Eagle", wheelset: "Stock", suspension: "Stock", brakes: "Stock", user_id: 2, img_url: "https://www.canyon.com/dw/image/v2/BCML_PRD/on/demandware.static/-/Sites-canyon-master/default/dw61ae4f8b/images/full/full_striv/2019/full_strive-cfr-9-team_c1321.png?sw=486&sh=273&sm=fit&sfrm=png")
