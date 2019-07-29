@@ -1,3 +1,3 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :username, :location, :bike_id, :id, :comments, :rides, :likes, :followings, :followed_users, :followers, :follower_users
+  attributes :username, :location, :id, :comments, :rides, :likes, :followed_users, :follower_users, :followers, :img_url, :bikes
 end
