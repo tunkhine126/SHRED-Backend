@@ -11,7 +11,7 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 # require "sprockets/railtie"
-# require "rails/test_unit/railtie"
+require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -31,5 +31,13 @@ module SHRED
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+  end
+  config_files = ["secrets.yml"]
+    config_files.each do |file_name|
+      file_path = File.join(Rails.root, 'config', file_name)
+      config_keys = HashWithIndifferentAccess.new(YAML.safe_load(IO.read(file_path)))[Rails.env]
+      config_keys.each do |k, v|
+      ENV[k.upcase] ||= v
+    end
   end
 end

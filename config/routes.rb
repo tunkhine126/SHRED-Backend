@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :trails
+  get "/trails&search=query", to: "trails#index"
+  get "/trails&lat=:lat&lon=:lon&maxResults=:max_results", to: "trails#trails_search"
+
   resources :bikes
 
   resources :comments
