@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  skip_before_action :authorized, only: [:index, :create, :show, :update, :edit]
+  skip_before_action :authorized, only: [:index, :create]
 
   def index
     @users = User.all
@@ -31,12 +31,20 @@ class Api::V1::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    render json: @user
+    if @user.update(user_params)
+      render json: @user
+    else 
+      render json: { error: 'Uh oh..failed to edit user' }, status: :not_acceptable
+    end
   end
 
   def show
     @user = User.find(params[:id])
+    if @user.update(user_params)
     render json: UserSerializer.new(@user)
+    else 
+    render json: { error: 'User does not exist. PLease try again' }, status: :not_acceptable
+    end
   end
   
   def destroy
