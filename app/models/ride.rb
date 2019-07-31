@@ -1,6 +1,6 @@
 class Ride < ApplicationRecord
   belongs_to :user
-  has_many :comments
-  has_many :likes
-  has_one :trail
+  belongs_to :trail
+  # has_many :comments
+  # has_many :likes
 end

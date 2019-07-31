@@ -1,3 +1,3 @@
 class Trail < ApplicationRecord
-  has_many :rides
+  belongs_to :user
 end

@@ -22,9 +22,18 @@ class TrailsController < ApplicationController
         end
     end
 
+    def create
+      @trails = Trail.create(trails_params)
+      render json: @trails
+    end
+
     def index
         @trails = Trail.all 
         render json: @trails
     end
     
+    private
+    def trails_params
+      params.require(:trail).permit(:api_index, :name, :type, :summary, :difficulty, :stars, :starVotes, :location, :url, :imgSqSmall, :imgSmall, :imgSmallMed, :imgMedium, :length, :ascent, :descent, :high, :low, :longitude, :latitude, :conditionStatus, :conditionDetails, :conditionDate, :user_id)
+    end
 end

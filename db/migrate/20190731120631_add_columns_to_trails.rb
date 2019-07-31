@@ -22,5 +22,6 @@ class AddColumnsToTrails < ActiveRecord::Migration[5.2]
     add_column :trails, :conditionStatus, :string
     add_column :trails, :conditionDetails, :string
     add_column :trails, :conditionDate, :string 
+    add_column :trails, :user_id, :integer
   end
 end
