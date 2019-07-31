@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :likes
   has_many :rides
+  has_many :trails, through: :rides
 
   has_secure_password
 
