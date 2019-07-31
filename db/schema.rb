@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_07_31_125946) do
     t.integer "user_id"
     t.integer "ride_id"
     t.string "date"
-    t.text "comment"
+    t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 2019_07_31_125946) do
     t.string "conditionStatus"
     t.string "conditionDetails"
     t.string "conditionDate"
-    t.integer "ride_id"
+    t.integer "user_id"
     t.integer "api_index"
   end
 
