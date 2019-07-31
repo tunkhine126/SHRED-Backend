@@ -1,8 +1,9 @@
 class BikesController < ApplicationController
+  skip_before_action :authorized
 
   def index
-    @bike = Bike.all
-    render json: @bike
+    @bikes = Bike.all
+    render json: @bikes
   end
 
   def new
@@ -30,7 +31,7 @@ class BikesController < ApplicationController
   
   private
   def bike_params
-    params.require(:bike).permit(:style, :name, :img_url, :frameset, :groupset, :wheelset, :tires, :suspension, :brakes, :user_id)
+    params.require(:bike).permit(:category, :name, :img_url, :frameset, :groupset, :wheelset, :tires, :suspension, :brakes, :user_id)
   end
 
 end
