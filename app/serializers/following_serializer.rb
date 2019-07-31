@@ -1,3 +1,3 @@
 class FollowingSerializer < ActiveModel::Serializer
-  attributes :user_id, :followed_users, :follower_users
+  attributes :id, :user, :followed_user
 end
