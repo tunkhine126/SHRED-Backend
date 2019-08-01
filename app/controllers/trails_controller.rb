@@ -8,7 +8,7 @@ class TrailsController < ApplicationController
         lon = params[:lon].sub('!', '.')
         url = "https://www.mtbproject.com/data/get-trails?lat=#{lat}&lon=#{lon}&maxResults=#{params[:max_results]}"
         api_key = "&key=#{ENV["TRAILS_API_KEY"]}"
-        trails = JSON.parse(open(url + api_key).read)["trails"][0..25]
+        trails = JSON.parse(open(url + api_key).read)["trails"][0..100]
         sorted_trails = trails.sort_by{|t| t['stars']}.reverse
 
         render json: sorted_trails, status: :ok
