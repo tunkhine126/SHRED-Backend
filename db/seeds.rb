@@ -29,22 +29,20 @@ willBike = Bike.create(category: "Downhill",name: "Spesh", frameset: "29r", grou
     suspension: "Stock",
     brakes: "Stock",
     user_id: Faker::Number.between(1, 50),
-    img_url: 'https://i.stack.imgur.com/34AD2.jpg'
+    img_url: 'https://www.bikes.com/sites/default/files/styles/homeslide_tall/public/Web_InstinctBC10_RBell_Ecuador.jpg?'
   )
 end
 
-tunRide = Ride.create(user_id: 1, date: "22 July 2019", description: "Best ever", trail_id: 1234)
-presRide = Ride.create(user_id: 2, date: "21 July 2019", description: "Gnarly", trail_id: 1111)
-willRide = Ride.create(user_id: 3, date: "20 July 2019", description: "Dead", trail_id: 1222)
-30.times do
-  Ride.create(
-    user_id: Faker::Number.between(1, 50),
-    date: Faker::Date.between_except(1.year.ago, 1.year.from_now, Date.today),
-    description: Faker::Restaurant.review,
-    trail_id: Faker::Number.between(1000, 2000),
-  )
-end
+# 30.times do
+#   Trail.create(
+#     user_id: Faker::Number.between(1, 50),
+#     api_index: Faker::Number.between(6463207, 7024887),
+#   )
+# end
 
-tunComment = Comment.create(user_id: 1, ride_id: 3, date: "20 July 2019", comment: "Looked lame")
-presComment = Comment.create(user_id: 2, ride_id: 3, date: "20 July 2019", comment: "Nice job!")
-willComment = Comment.create(user_id: 3, ride_id: 1, date: "20 July 2019", comment: "WEAK")
+# 100.times do
+#   Following.create.(
+#     user_id: Faker::Number.between(1, 50),
+#     followed_user_id: Faker::Number.between(1, 50)
+#   )
+#   end
