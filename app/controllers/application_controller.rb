@@ -16,19 +16,19 @@ class ApplicationController < ActionController::API
     end
   end
 
-    def current_user
-      if decoded_token
-        user_id = decoded_token[0]['user_id']
-        @user = User.find(user_id)
-      end
+  def current_user
+    if decoded_token
+      user_id = decoded_token[0]['user_id']
+      @user = User.find(user_id)
     end
+  end
 
-    def logged_in?
-      !!current_user
-    end
+  def logged_in?
+    !!current_user
+  end
   
-    def authorized
-      render json: { message: 'Please log in to shred'}, status: :authorized unless logged_in?
-    end 
+  def authorized
+    render json: { message: 'Please log in to shred'}, status: :authorized unless logged_in?
+  end 
 
 end
