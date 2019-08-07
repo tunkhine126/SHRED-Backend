@@ -15,11 +15,11 @@ class TrailsController < ApplicationController
     end
 
     def show
-        begin @trail = Trail.find(params[:id])
-            render json: @trail
-        rescue
-            render json: {status: "error", code: 404, message: "Trail doesn't exist!"}
-        end
+      begin @trail = Trail.find(params[:id])
+          render json: @trail
+      rescue
+          render json: {status: "error", code: 404, message: "Trail doesn't exist!"}
+      end
     end
 
     def create
